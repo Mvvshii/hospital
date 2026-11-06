@@ -22,6 +22,13 @@ public class Hospital {
     public static void main(String[] args) {
         List<Applicants> applicants = readFile("applicants");
         System.out.println("Records read: " + applicants.size());
+        
+        Applicants[] arr = applicants.toArray(new Applicants[0]);
+        sort.mergeSort(arr, 0, arr.length -1);
+        int limit = Math.min(20, arr.length);
+        for (int i =0; i < limit; i++){
+        System.out.println((i + 1)+ ". " + arr[i].getName());
+        }
     }
 
     static List<Applicants> readFile(String filename) {
